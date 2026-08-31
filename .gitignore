@@ -1,0 +1,8 @@
+# Le site genere est A LA RACINE dans ce depot : c'est de la qu'il est servi.
+# Le dossier demo/ n'existe qu'en local, a cote des sources.
+src/demo/
+__pycache__/
+*.pyc
+# Les demandes B2B contiennent des coordonnees professionnelles.
+donnees/
+*.sqlite

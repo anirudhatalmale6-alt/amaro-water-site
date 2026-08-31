@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La bouteille 8 — AMARO</title>
+<meta name="description" content="La bouteille 8 — Water. Reimagined.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 72'%3E%3Cpath fill='none' stroke='%23CB5F87' stroke-width='6' stroke-linecap='round' d='M24 6c9 0 14 5.5 14 12.5S29 30 24 32c-5 2-16 5.5-16 14.5S15 66 24 66s16-9 16-19.5S29 34 24 32c-5-2-16-6.5-16-13.5S15 6 24 6z'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<a class="saut" href="#contenu" data-fr="Aller au contenu"
+   data-en="Skip to content">Aller au contenu</a>
+<header class="entete" id="entete">
+  <div class="entete__in">
+    <a class="marque" href="index.html"><svg class="logo8" viewBox="0 0 48 72" width="16" height="24" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M24 6c9 0 14 5.5 14 12.5S29 30 24 32c-5 2-16 5.5-16 14.5S15 66 24 66s16-9 16-19.5S29 34 24 32c-5-2-16-6.5-16-13.5S15 6 24 6z"/></svg><span>AMARO</span></a>
+    <button class="burger" type="button" id="burger" aria-expanded="false"
+            aria-controls="nav" data-fr="Menu" data-en="Menu">Menu</button>
+    <nav class="nav" id="nav" aria-label="Navigation principale"><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a><a href="notre-eau.html" data-fr="Notre eau" data-en="Our Water">Notre eau</a><a href="saveurs.html" data-fr="Saveurs" data-en="Flavors">Saveurs</a><a href="bouteille.html" aria-current="page" data-fr="La bouteille 8" data-en="The 8 Bottle">La bouteille 8</a><a href="produits.html" data-fr="Produits" data-en="Products">Produits</a><a href="durabilite.html" data-fr="Durabilité" data-en="Sustainability">Durabilité</a><a href="marque.html" data-fr="La marque" data-en="About">La marque</a><a href="business.html" data-fr="AMARO Business" data-en="AMARO Business">AMARO Business</a><a href="distribution.html" data-fr="Distribution" data-en="Global Distribution">Distribution</a><a href="actualites.html" data-fr="Actualités" data-en="News">Actualités</a><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></nav>
+    <div class="langues" role="group" aria-label="Langue / Language">
+      <button type="button" data-langue="fr" aria-pressed="true">FR</button>
+      <button type="button" data-langue="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+<main id="contenu">
+<section class="section "><div class="enveloppe"><div class="tete "><h2 data-fr="AMARO 8" data-en="AMARO 8">AMARO 8</h2><p data-fr="La bouteille AMARO n’est pas un cylindre avec une étiquette dessus. Sa silhouette est le produit : deux volumes arrondis reliés par une zone centrale plus étroite, qui dessinent un 8 de profil et servent de prise en main." data-en="The AMARO bottle is not a cylinder with a label on it. Its silhouette is the product: two rounded volumes joined by a narrower central zone, drawing a figure 8 in profile and doubling as the grip.">La bouteille AMARO n’est pas un cylindre avec une étiquette dessus. Sa silhouette est le produit : deux volumes arrondis reliés par une zone centrale plus étroite, qui dessinent un 8 de profil et servent de prise en main.</p></div><div class="grille grille--2" style="align-items:start"><div class="viseur rev">
+      
+<svg class="bouteille" viewBox="0 0 240 620" width="178" height="460"
+     role="img" aria-label="AMARO NATURAL" data-uid="b-v360-i">
+  <!-- L'ombre portee au sol : sans elle la bouteille flotte. Son rayon est
+       celui du TALON, pas un chiffre rond : plus large que le pied, elle
+       depasse de chaque cote et se lit comme un evasement de la bouteille
+       elle-meme. Vu sur la premiere capture. -->
+  <ellipse cx="120.0" cy="587.0" rx="55.0" ry="9"
+           fill="#43172A" opacity=".11"/>
+
+  <g clip-path="url(#amaro-clip)">
+    <rect x="0" y="0" width="240" height="620" fill="#fff"/>
+    <rect x="0" y="132.0" width="240" height="620"
+          fill="url(#amaro-liq-bfe0ea)"/>
+    <!-- la surface du liquide est une ellipse : vue de face, un cylindre
+         rempli montre son menisque, pas un trait -->
+    <ellipse cx="120.0" cy="132.0" rx="62.9" ry="7"
+             fill="#BFE0EA" opacity=".38"/>
+    
+
+    <!-- les deux coutures de moule, a ±90° de la face. Elles reprennent le
+         MEME flanc que le contour, ecrase horizontalement : c'est exactement
+         la projection d'une generatrice du cylindre. -->
+    <use href="#amaro-flanc" xlink:href="#amaro-flanc"  id="b-v360-i-couture-d" class="couture" fill="none" stroke="#43172A" stroke-width="1.1" opacity=".16" transform="translate(120.0,0) scale(0.001,1) translate(-120.0,0)"/>
+    <use href="#amaro-flanc" xlink:href="#amaro-flanc"  id="b-v360-i-couture-g" class="couture" fill="none" stroke="#43172A" stroke-width="1.1" opacity=".16" transform="translate(120.0,0) scale(-0.001,1) translate(-120.0,0)"/>
+
+    <!-- le panneau arriere : il n'apparait que quand la face s'en va -->
+    <g id="b-v360-i-dos" class="etq-dos" opacity="0">
+      <rect x="34.2" y="398.0" width="171.5" height="94.0"
+            fill="#FFFFFF" opacity=".92"/>
+      <rect x="34.2" y="398.0" width="171.5" height="3"
+            fill="#CB5F87"/>
+      <g fill="#8E3457" opacity=".55">
+        <rect x="50.2" y="418.0" width="139.5" height="4" rx="2"/>
+        <rect x="50.2" y="430.0" width="100.4" height="4" rx="2"/>
+        <rect x="50.2" y="442.0" width="139.5" height="4" rx="2"/>
+        <rect x="50.2" y="454.0" width="76.7" height="4" rx="2"/>
+      </g>
+    </g>
+
+    <!-- l'etiquette de face, azimut 0 -->
+    <g id="b-v360-i-face" class="etq-face">
+      <rect x="34.2" y="398.0" width="171.5" height="94.0"
+            fill="#FFFFFF" opacity=".94"/>
+      <rect x="34.2" y="398.0" width="171.5" height="3"
+            fill="#BFE0EA"/>
+      <text x="120.0" y="440.0" text-anchor="middle"
+            font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+            font-size="21" letter-spacing="4.5" font-weight="600"
+            fill="#43172A">AMARO</text>
+      <text x="120.0" y="460.0" text-anchor="middle"
+            font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+            font-size="10" letter-spacing="2.4" fill="#8E3457"
+            opacity=".85">NATURAL</text>
+    </g>
+
+    <!-- la matiere par-dessus tout : c'est elle qui fait le plastique -->
+    <rect x="0" y="0" width="240" height="620" fill="url(#amaro-verre)"/>
+    <!-- le reflet speculaire ne tourne PAS avec la bouteille : il appartient
+         a la lampe, pas au produit. Son trace suit le profil (voir
+         chemin_reflet) : il se resserre a la taille comme le verre. -->
+    <path d="M87.76 127.00 C86.81 129.33 83.69 135.83 82.04 141.00 C80.39 146.17 78.96 151.83 77.88 158.00 C76.80 164.17 76.02 171.33 75.54 178.00 C75.06 184.67 74.89 191.33 75.02 198.00 C75.15 204.67 75.58 211.67 76.32 218.00 C77.06 224.33 78.14 230.00 79.44 236.00 C80.74 242.00 82.39 248.00 84.12 254.00 C85.85 260.00 87.93 266.33 89.84 272.00 C91.75 277.67 94.00 283.00 95.56 288.00 C97.12 293.00 98.42 298.00 99.20 302.00 C99.98 306.00 100.24 308.00 100.24 312.00 C100.24 316.00 100.07 321.00 99.20 326.00 C98.33 331.00 96.77 336.33 95.04 342.00 C93.31 347.67 90.88 353.67 88.80 360.00 C86.72 366.33 84.55 373.00 82.56 380.00 C80.57 387.00 78.40 394.67 76.84 402.00 C75.28 409.33 73.98 416.33 73.20 424.00 C72.42 431.67 72.29 440.00 72.16 448.00 C72.03 456.00 72.07 464.00 72.42 472.00 C72.77 480.00 73.42 488.33 74.24 496.00 C75.06 503.67 76.15 511.00 77.36 518.00 C78.57 525.00 80.83 534.67 81.52 538.00" fill="none" stroke="#fff" stroke-width="9"
+          stroke-linecap="round" opacity=".58"/>
+  </g>
+
+  <use href="#amaro-corps" xlink:href="#amaro-corps" fill="none" stroke="#43172A" stroke-width="1.6" opacity=".30"/>
+
+  <!-- bague de col et bouchon -->
+  <rect x="95.0" y="46.0" width="50.0" height="14.0" rx="3"
+        fill="#F4D2DE" stroke="#43172A" stroke-opacity=".22"/>
+  <rect x="99.0" y="10.0" width="42.0" height="40.0" rx="5"
+        fill="url(#amaro-cap)"/>
+  <g stroke="#43172A" stroke-opacity=".18" stroke-width="1"><line x1="103.0" y1="16.0" x2="103.0" y2="45.0"/><line x1="107.2" y1="16.0" x2="107.2" y2="45.0"/><line x1="111.4" y1="16.0" x2="111.4" y2="45.0"/><line x1="115.6" y1="16.0" x2="115.6" y2="45.0"/><line x1="119.8" y1="16.0" x2="119.8" y2="45.0"/><line x1="124.0" y1="16.0" x2="124.0" y2="45.0"/><line x1="128.2" y1="16.0" x2="128.2" y2="45.0"/><line x1="132.4" y1="16.0" x2="132.4" y2="45.0"/><line x1="136.6" y1="16.0" x2="136.6" y2="45.0"/></g>
+</svg>
+      <div class="viseur__cmd">
+        <label for="curseur-angle" data-fr="Rotation" data-en="Rotation">Rotation</label>
+        <input type="range" id="curseur-angle" min="0" max="359" value="0"
+               step="1" aria-describedby="lecture-angle">
+        <span class="viseur__lecture" id="lecture-angle">0&deg;</span>
+      </div>
+      <p class="viseur__aide" data-fr="Faites glisser la bouteille, ou utilisez le curseur au clavier. L’étiquette s’enroule et les deux coutures de moule balaient le corps : c’est la géométrie réelle d’un cylindre, pas un fondu entre deux images." data-en="Drag the bottle, or use the slider from the keyboard. The label wraps and the two mould seams sweep across the body: this is the real geometry of a cylinder, not a cross-fade between two images.">Faites glisser la bouteille, ou utilisez le curseur au clavier. L’étiquette s’enroule et les deux coutures de moule balaient le corps : c’est la géométrie réelle d’un cylindre, pas un fondu entre deux images.</p>
+    </div><div><h3 style="margin:0 0 16px;font-size:24px" data-fr="Fiche technique" data-en="Technical sheet">Fiche technique</h3><table class="fiche"><caption class="hors-ecran" data-fr="Fiche technique de la bouteille" data-en="Bottle technical sheet">Fiche technique de la bouteille</caption><tbody><tr><th data-fr="Matière" data-en="Material">Matière</th><td>PET / rPET alimentaire</td></tr><tr><th data-fr="Taux de rPET" data-en="rPET content">Taux de rPET</th><td><span class="vide" data-vide="rpet" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr><tr><th data-fr="Poids de la préforme (g)" data-en="Preform weight (g)">Poids de la préforme (g)</th><td><span class="vide" data-vide="poids" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr><tr><th data-fr="Norme de col / bouchon" data-en="Neck finish / closure">Norme de col / bouchon</th><td><span class="vide" data-vide="col" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr><tr><th data-fr="Hauteur hors tout (mm)" data-en="Overall height (mm)">Hauteur hors tout (mm)</th><td><span class="vide" data-vide="hauteur" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr><tr><th data-fr="Diamètre maximal (mm)" data-en="Maximum diameter (mm)">Diamètre maximal (mm)</th><td><span class="vide" data-vide="diametre" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr><tr><th data-fr="Diamètre à la taille (mm)" data-en="Waist diameter (mm)">Diamètre à la taille (mm)</th><td><span class="vide" data-vide="taille" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr><tr><th data-fr="Épaisseur mini de paroi (mm)" data-en="Minimum wall thickness (mm)">Épaisseur mini de paroi (mm)</th><td><span class="vide" data-vide="epaisseur" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr><tr><th data-fr="Résistance à la compression" data-en="Top load resistance">Résistance à la compression</th><td><span class="vide" data-vide="topload" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr><tr><th data-fr="Type d’étiquette" data-en="Label type">Type d’étiquette</th><td><span class="vide" data-vide="etiquette" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr><tr><th data-fr="Colisage et palettisation" data-en="Case and pallet pattern">Colisage et palettisation</th><td><span class="vide" data-vide="palette" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr><tr><th data-fr="Fabricant du moule" data-en="Mould maker">Fabricant du moule</th><td><span class="vide" data-vide="moule" data-fr="à renseigner" data-en="to be provided">à renseigner</span></td></tr></tbody></table></div></div></div></section><section class="section section--rose"><div class="enveloppe"><div class="tete "><h2 data-fr="Six contraintes, un seul dessin" data-en="Six constraints, one drawing">Six contraintes, un seul dessin</h2></div><div class="grille grille--3"><div class="carte rev" style="--tint:var(--rose-200);
+             min-height:0" data-delai="0">
+             <h3 data-fr="Identité" data-en="Identity">Identité</h3><p data-fr="Reconnaissable en rayon, de loin, sans lire l’étiquette." data-en="Recognisable on shelf, from a distance, without reading the label.">Reconnaissable en rayon, de loin, sans lire l’étiquette.</p>
+           </div><div class="carte rev" style="--tint:var(--rose-200);
+             min-height:0" data-delai="60">
+             <h3 data-fr="Ergonomie" data-en="Ergonomics">Ergonomie</h3><p data-fr="La taille resserrée tombe sous les doigts. C’est la prise, pas un ornement." data-en="The narrow waist falls under the fingers. It is the grip, not an ornament.">La taille resserrée tombe sous les doigts. C’est la prise, pas un ornement.</p>
+           </div><div class="carte rev" style="--tint:var(--rose-200);
+             min-height:0" data-delai="120">
+             <h3 data-fr="Stabilité" data-en="Stability">Stabilité</h3><p data-fr="Base large et plate : le centre de gravité reste bas malgré le volume haut." data-en="Wide flat base: the centre of gravity stays low despite the upper volume.">Base large et plate : le centre de gravité reste bas malgré le volume haut.</p>
+           </div><div class="carte rev" style="--tint:var(--rose-200);
+             min-height:0" data-delai="180">
+             <h3 data-fr="Résistance" data-en="Strength">Résistance</h3><p data-fr="La zone étroite est la plus sollicitée. Elle est nervurée et son épaisseur est un point de validation." data-en="The narrow zone takes the most load. It is ribbed, and its wall thickness is a validation point.">La zone étroite est la plus sollicitée. Elle est nervurée et son épaisseur est un point de validation.</p>
+           </div><div class="carte rev" style="--tint:var(--rose-200);
+             min-height:0" data-delai="240">
+             <h3 data-fr="Légèreté" data-en="Lightweighting">Légèreté</h3><p data-fr="Moins de matière par bouteille, à condition de tenir la palette. Le poids se fixe à l’essai, pas sur le papier." data-en="Less material per bottle, provided the pallet holds. Weight is set on trial, not on paper.">Moins de matière par bouteille, à condition de tenir la palette. Le poids se fixe à l’essai, pas sur le papier.</p>
+           </div><div class="carte rev" style="--tint:var(--rose-200);
+             min-height:0" data-delai="300">
+             <h3 data-fr="Ligne industrielle" data-en="Industrial line">Ligne industrielle</h3><p data-fr="Soufflage, remplissage, bouchage, étiquetage, palettisation : la forme doit passer les cinq." data-en="Blowing, filling, capping, labelling, palletising: the shape has to clear all five.">Soufflage, remplissage, bouchage, étiquetage, palettisation : la forme doit passer les cinq.</p>
+           </div></div><div style="margin-top:30px"><div class="avertissement"><p data-fr="Ce qui est montré ci-dessus est un rendu que je dessine : une silhouette vectorielle construite à partir d’un profil de rayons. Ce n’est pas une photographie et ce n’est pas un décalque — la bouteille n’est pas encore fabriquée. Le jour où elle le sera, la photo remplace le rendu et la page ne change pas." data-en="What is shown above is a rendering I draw: a vector silhouette built from a profile of radii. It is not a photograph and not a trace — the bottle is not manufactured yet. The day it is, the photo replaces the rendering and the page does not change.">Ce qui est montré ci-dessus est un rendu que je dessine : une silhouette vectorielle construite à partir d’un profil de rayons. Ce n’est pas une photographie et ce n’est pas un décalque — la bouteille n’est pas encore fabriquée. Le jour où elle le sera, la photo remplace le rendu et la page ne change pas.</p></div></div></div></section>
+</main>
+<footer class="pied">
+  <div class="enveloppe">
+    <div class="pied__grille">
+      <div>
+        <p class="pied__signature">Water. Reimagined.</p>
+        <p data-fr="Maquette de travail. Aucune valeur réglementaire n’est publiée tant qu’elle n’est pas vérifiée." data-en="Working prototype. No regulatory value is published until it has been verified.">Maquette de travail. Aucune valeur réglementaire n’est publiée tant qu’elle n’est pas vérifiée.</p>
+      </div>
+      <div><h4 data-fr="Produits" data-en="Products">Produits</h4><ul><li><a href="notre-eau.html" data-fr="Notre eau" data-en="Our Water">Notre eau</a></li><li><a href="saveurs.html" data-fr="Saveurs" data-en="Flavors">Saveurs</a></li><li><a href="bouteille.html" data-fr="La bouteille 8" data-en="The 8 Bottle">La bouteille 8</a></li><li><a href="produits.html" data-fr="Produits" data-en="Products">Produits</a></li></ul></div>
+      <div><h4 data-fr="La marque" data-en="Company">La marque</h4><ul><li><a href="durabilite.html" data-fr="Durabilité" data-en="Sustainability">Durabilité</a></li><li><a href="marque.html" data-fr="La marque" data-en="About">La marque</a></li><li><a href="business.html" data-fr="AMARO Business" data-en="AMARO Business">AMARO Business</a></li></ul></div>
+      <div><h4 data-fr="Plus" data-en="More">Plus</h4><ul><li><a href="distribution.html" data-fr="Distribution" data-en="Global Distribution">Distribution</a></li><li><a href="actualites.html" data-fr="Actualités" data-en="News">Actualités</a></li><li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li><li><a href="boutique.html" data-fr="Boutique" data-en="Shop">Boutique</a></li><li><a href="design.html" data-fr="Charte graphique" data-en="Design system">Charte graphique</a></li><li><a href="a-renseigner.html" data-fr="Ce qui reste à fournir" data-en="What is still needed">Ce qui reste à fournir</a></li></ul></div>
+    </div>
+    <div class="pied__bas">
+      <span>&copy; AMARO</span>
+      <span data-fr="Mentions légales, politique de confidentialité et gestion des cookies : à rédiger une fois le pays d’exploitation choisi." data-en="Legal notice, privacy policy and cookie management: to be drafted once the country of operation is chosen.">Mentions légales, politique de confidentialité et gestion des cookies : à rédiger une fois le pays d’exploitation choisi.</span>
+    </div>
+  </div>
+</footer>
+<svg class="amaro-defs" width="0" height="0" aria-hidden="true"
+     focusable="false" style="position:absolute;width:0;height:0;overflow:hidden">
+  <defs>
+    <path id="amaro-corps" d="M136.00 64.00 C136.08 67.00 135.67 77.00 136.50 82.00 C137.33 87.00 138.25 90.33 141.00 94.00 C143.75 97.67 148.50 100.50 153.00 104.00 C157.50 107.50 163.17 111.17 168.00 115.00 C172.83 118.83 177.83 122.67 182.00 127.00 C186.17 131.33 189.83 135.83 193.00 141.00 C196.17 146.17 198.92 151.83 201.00 158.00 C203.08 164.17 204.58 171.33 205.50 178.00 C206.42 184.67 206.75 191.33 206.50 198.00 C206.25 204.67 205.42 211.67 204.00 218.00 C202.58 224.33 200.50 230.00 198.00 236.00 C195.50 242.00 192.33 248.00 189.00 254.00 C185.67 260.00 181.67 266.33 178.00 272.00 C174.33 277.67 170.00 283.00 167.00 288.00 C164.00 293.00 161.50 298.00 160.00 302.00 C158.50 306.00 158.00 308.00 158.00 312.00 C158.00 316.00 158.33 321.00 160.00 326.00 C161.67 331.00 164.67 336.33 168.00 342.00 C171.33 347.67 176.00 353.67 180.00 360.00 C184.00 366.33 188.17 373.00 192.00 380.00 C195.83 387.00 200.00 394.67 203.00 402.00 C206.00 409.33 208.50 416.33 210.00 424.00 C211.50 431.67 211.75 440.00 212.00 448.00 C212.25 456.00 212.17 464.00 211.50 472.00 C210.83 480.00 209.58 488.33 208.00 496.00 C206.42 503.67 204.33 511.00 202.00 518.00 C199.67 525.00 196.67 532.00 194.00 538.00 C191.33 544.00 188.17 549.67 186.00 554.00 C183.83 558.33 181.83 562.33 181.00 564.00 C181.00 576.00 173.00 580.00 161.00 580.00 C144.00 580.00 138.00 567.00 120.00 567.00 C102.00 567.00 96.00 580.00 79.00 580.00 C67.00 580.00 59.00 576.00 59.00 564.00 C58.17 562.33 56.17 558.33 54.00 554.00 C51.83 549.67 48.67 544.00 46.00 538.00 C43.33 532.00 40.33 525.00 38.00 518.00 C35.67 511.00 33.58 503.67 32.00 496.00 C30.42 488.33 29.17 480.00 28.50 472.00 C27.83 464.00 27.75 456.00 28.00 448.00 C28.25 440.00 28.50 431.67 30.00 424.00 C31.50 416.33 34.00 409.33 37.00 402.00 C40.00 394.67 44.17 387.00 48.00 380.00 C51.83 373.00 56.00 366.33 60.00 360.00 C64.00 353.67 68.67 347.67 72.00 342.00 C75.33 336.33 78.33 331.00 80.00 326.00 C81.67 321.00 82.00 316.00 82.00 312.00 C82.00 308.00 81.50 306.00 80.00 302.00 C78.50 298.00 76.00 293.00 73.00 288.00 C70.00 283.00 65.67 277.67 62.00 272.00 C58.33 266.33 54.33 260.00 51.00 254.00 C47.67 248.00 44.50 242.00 42.00 236.00 C39.50 230.00 37.42 224.33 36.00 218.00 C34.58 211.67 33.75 204.67 33.50 198.00 C33.25 191.33 33.58 184.67 34.50 178.00 C35.42 171.33 36.92 164.17 39.00 158.00 C41.08 151.83 43.83 146.17 47.00 141.00 C50.17 135.83 53.83 131.33 58.00 127.00 C62.17 122.67 67.17 118.83 72.00 115.00 C76.83 111.17 82.50 107.50 87.00 104.00 C91.50 100.50 96.25 97.67 99.00 94.00 C101.75 90.33 102.67 87.00 103.50 82.00 C104.33 77.00 103.92 67.00 104.00 64.00 Z"/>
+    <path id="amaro-flanc" d="M136.00 64.00 C136.08 67.00 135.67 77.00 136.50 82.00 C137.33 87.00 138.25 90.33 141.00 94.00 C143.75 97.67 148.50 100.50 153.00 104.00 C157.50 107.50 163.17 111.17 168.00 115.00 C172.83 118.83 177.83 122.67 182.00 127.00 C186.17 131.33 189.83 135.83 193.00 141.00 C196.17 146.17 198.92 151.83 201.00 158.00 C203.08 164.17 204.58 171.33 205.50 178.00 C206.42 184.67 206.75 191.33 206.50 198.00 C206.25 204.67 205.42 211.67 204.00 218.00 C202.58 224.33 200.50 230.00 198.00 236.00 C195.50 242.00 192.33 248.00 189.00 254.00 C185.67 260.00 181.67 266.33 178.00 272.00 C174.33 277.67 170.00 283.00 167.00 288.00 C164.00 293.00 161.50 298.00 160.00 302.00 C158.50 306.00 158.00 308.00 158.00 312.00 C158.00 316.00 158.33 321.00 160.00 326.00 C161.67 331.00 164.67 336.33 168.00 342.00 C171.33 347.67 176.00 353.67 180.00 360.00 C184.00 366.33 188.17 373.00 192.00 380.00 C195.83 387.00 200.00 394.67 203.00 402.00 C206.00 409.33 208.50 416.33 210.00 424.00 C211.50 431.67 211.75 440.00 212.00 448.00 C212.25 456.00 212.17 464.00 211.50 472.00 C210.83 480.00 209.58 488.33 208.00 496.00 C206.42 503.67 204.33 511.00 202.00 518.00 C199.67 525.00 196.67 532.00 194.00 538.00 C191.33 544.00 188.17 549.67 186.00 554.00 C183.83 558.33 181.83 562.33 181.00 564.00"/>
+    <clipPath id="amaro-clip" clipPathUnits="userSpaceOnUse">
+      <use href="#amaro-corps" xlink:href="#amaro-corps"/>
+    </clipPath>
+    <linearGradient id="amaro-verre" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#000" stop-opacity=".20"/>
+      <stop offset=".14"  stop-color="#000" stop-opacity=".04"/>
+      <stop offset=".30"  stop-color="#fff" stop-opacity=".55"/>
+      <stop offset=".46"  stop-color="#fff" stop-opacity=".10"/>
+      <stop offset=".78"  stop-color="#000" stop-opacity=".05"/>
+      <stop offset="1"    stop-color="#000" stop-opacity=".22"/>
+    </linearGradient>
+    <linearGradient id="amaro-cap" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#8E3457"/>
+      <stop offset=".32" stop-color="#CB5F87"/>
+      <stop offset=".62" stop-color="#8E3457"/>
+      <stop offset="1"   stop-color="#6B2540"/>
+    </linearGradient>
+    <linearGradient id="amaro-liq-bfe0ea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFE0EA" stop-opacity=".62"/><stop offset="1" stop-color="#BFE0EA" stop-opacity=".92"/></linearGradient>
+  </defs>
+</svg>
+<script src="script.js"></script>
+<script>
+(function () {
+  var svg = document.querySelector('[data-uid="b-v360-i"]');
+  if (!svg) return;
+  var face = document.getElementById('b-v360-i-face'),
+      dos  = document.getElementById('b-v360-i-dos'),
+      cd   = document.getElementById('b-v360-i-couture-d'),
+      cg   = document.getElementById('b-v360-i-couture-g'),
+      lect = document.getElementById('lecture-angle'),
+      curseur = document.getElementById('curseur-angle');
+  var CX = 120.0, R = 91.8, a = 0, glisse = false, x0 = 0, a0 = 0;
+
+  function cyl(el, azimut, ecrase) {
+    // x = R sin(t+a) ; visible si cos(t+a) > 0. C'est toute la geometrie.
+    var t = azimut + a, c = Math.cos(t), s = Math.sin(t);
+    if (c <= 0.02) { el.setAttribute('opacity', '0'); return; }
+    var k = ecrase ? c : (c < 0 ? -c : c);
+    if (k < 0.001) k = 0.001;
+    el.setAttribute('opacity', String(Math.min(1, c * 1.6)));
+    el.setAttribute('transform',
+      'translate(' + (CX + R * s) + ',0) scale(' + k + ',1) translate(' +
+      (-CX) + ',0)');
+  }
+
+  function couture(el, azimut) {
+    var t = azimut + a, c = Math.cos(t), s = Math.sin(t);
+    // Le flanc est deja a x = CX + r(y) ; l'ecraser de sin(t) le place a
+    // x = CX + r(y)·sin(t), c'est-a-dire sur la bonne generatrice.
+    if (c <= 0) { el.setAttribute('opacity', '0'); return; }
+    var k = s;
+    if (Math.abs(k) < 0.001) k = k < 0 ? -0.001 : 0.001;
+    el.setAttribute('opacity', String(0.18 * Math.min(1, c * 2)));
+    el.setAttribute('transform',
+      'translate(' + CX + ',0) scale(' + k + ',1) translate(' + (-CX) + ',0)');
+  }
+
+  function rendre() {
+    while (a < 0) a += Math.PI * 2;
+    a = a % (Math.PI * 2);
+    cyl(face, 0, true);
+    cyl(dos, Math.PI, false);
+    couture(cd, Math.PI / 2);
+    couture(cg, -Math.PI / 2);
+    var deg = Math.round(a * 180 / Math.PI) % 360;
+    if (lect) lect.textContent = deg + '\u00B0';
+    if (curseur && document.activeElement !== curseur) curseur.value = deg;
+  }
+
+  function pointe(e) { return e.touches ? e.touches[0].clientX : e.clientX; }
+
+  svg.addEventListener('pointerdown', function (e) {
+    glisse = true; x0 = pointe(e); a0 = a;
+    svg.setPointerCapture && svg.setPointerCapture(e.pointerId);
+    svg.classList.add('tourne');
+  });
+  svg.addEventListener('pointermove', function (e) {
+    if (!glisse) return;
+    a = a0 + (pointe(e) - x0) * 0.012;
+    rendre();
+  });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (n) {
+    svg.addEventListener(n, function () {
+      glisse = false; svg.classList.remove('tourne');
+    });
+  });
+
+  // Le curseur EST la commande accessible : au clavier, une image qu'on fait
+  // glisser ne se manipule pas. Il n'y a donc pas de « version clavier »
+  // separee — il y a un seul controle, et la souris s'y branche.
+  if (curseur) {
+    curseur.addEventListener('input', function () {
+      a = curseur.value * Math.PI / 180; rendre();
+    });
+  }
+  rendre();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+# -*- coding: utf-8 -*-
+"""La feuille de style AMARO. Rose et blanc.
+
+Le client a demande « rose et blanc ». Deux couleurs ne suffisent pas a tenir
+un site : il faut une echelle, sinon chaque page invente son rose et la
+marque se delave d'un ecran a l'autre. L'echelle est declaree UNE FOIS en
+variables CSS, ici, et la page charte la montre telle quelle — elle la lit
+dans contenu.py, elle ne la recopie pas.
+
+Rien n'est cache par defaut. Les apparitions au defilement ne s'appliquent
+que sous la classe `js`, posee par le script lui-meme : sans JavaScript,
+tout le texte est visible. Un site dont le contenu depend d'un script est un
+site blanc le jour ou le script echoue.
+"""
+
+CSS = """
+:root {
+  --rose-50:#FDF6F8; --rose-100:#FAE9EF; --rose-200:#F4D2DE;
+  --rose-300:#EAB2C6; --rose-400:#DC8CAA; --rose-500:#CB5F87;
+  --rose-600:#B04670; --rose-700:#8E3457; --rose-800:#6B2540;
+  --rose-900:#43172A;
+  --blanc:#FFFFFF; --gris-100:#F4F1F2; --gris-400:#786E72; --gris-700:#544A4E;
+  --encre:var(--rose-900);
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"Helvetica Neue",Helvetica,Arial,"Segoe UI",system-ui,sans-serif;
+  --pad:clamp(20px,5vw,88px);
+  --ligne:1px solid var(--rose-200);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--blanc);color:var(--encre);
+  font:400 17px/1.65 var(--sans);letter-spacing:.005em;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-.022em;line-height:1.06}
+p{margin:0 0 1em}
+hr{border:0;border-top:var(--ligne);margin:0}
+
+.enveloppe{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.section{padding:clamp(56px,9vw,132px) 0}
+.section--rose{background:var(--rose-50)}
+.section--encre{background:var(--rose-900);color:var(--rose-100)}
+.section--encre a{color:var(--rose-200)}
+/* Deux pieges de la bande sombre, tous deux trouves en MESURANT le contraste
+   sur les couleurs calculees, pas en relisant la feuille :
+     1. `.tete p` impose gris-700 — un gris fonce, pose sur du rose-900 tout
+        aussi fonce : 1,77 pour 1. Lisible nulle part ;
+     2. `.section--encre a` est plus specifique que `.btn--clair`, donc le
+        bouton blanc recevait un texte rose-200 : 1,39 pour 1. Le bouton
+        avait l'air normal tant qu'on ne lisait pas ce qu'il disait. */
+.section--encre .tete p{color:var(--rose-200)}
+.section--encre a.btn--clair{color:var(--rose-700)}
+
+/* ── En-tete ───────────────────────────────────────────────────────────── */
+.entete{
+  position:sticky;top:0;z-index:60;background:rgba(255,255,255,.86);
+  backdrop-filter:saturate(160%) blur(14px);border-bottom:var(--ligne);
+}
+.entete__in{display:flex;align-items:center;gap:22px;
+  padding:12px var(--pad);max-width:1280px;margin:0 auto}
+.marque{display:flex;align-items:center;gap:10px;text-decoration:none;
+  font-weight:700;letter-spacing:.30em;font-size:15px;color:var(--rose-900)}
+.marque .logo8{color:var(--rose-500);flex:none}
+.nav{display:flex;gap:2px;margin-left:auto;flex-wrap:wrap}
+.nav a{
+  text-decoration:none;font-size:13px;letter-spacing:.055em;
+  padding:8px 11px;border-radius:999px;color:var(--gris-700);
+  white-space:nowrap;transition:background .18s,color .18s;
+}
+.nav a:hover{background:var(--rose-100);color:var(--rose-700)}
+.nav a[aria-current="page"]{background:var(--rose-600);color:#fff}
+.langues{display:flex;gap:0;border:var(--ligne);border-radius:999px;
+  overflow:hidden;flex:none}
+.langues button{
+  font:inherit;font-size:12px;letter-spacing:.09em;padding:6px 12px;
+  border:0;background:transparent;color:var(--gris-700);cursor:pointer;
+}
+.langues button[aria-pressed="true"]{background:var(--rose-600);color:#fff}
+.burger{display:none;margin-left:auto;border:var(--ligne);background:#fff;
+  border-radius:10px;padding:8px 11px;font:inherit;font-size:13px;
+  cursor:pointer;color:var(--rose-700)}
+
+@media (max-width:1080px){
+  .burger{display:block}
+  .nav{
+    order:9;width:100%;margin-left:0;flex-direction:column;gap:0;
+    border-top:var(--ligne);padding-top:8px;margin-top:10px;
+  }
+  .nav a{padding:11px 4px;border-radius:0;font-size:15px}
+  body:not(.js) .nav{display:flex}
+  body.js .nav{display:none}
+  body.js .entete.ouvert .nav{display:flex}
+  .langues{margin-left:12px}
+}
+
+/* ── Hero ──────────────────────────────────────────────────────────────── */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(120% 80% at 50% 0%,var(--rose-100) 0%,#fff 62%),
+    var(--blanc);
+  padding:clamp(28px,5vw,60px) 0 clamp(40px,7vw,96px);
+}
+.hero__in{display:grid;gap:clamp(20px,4vw,56px);align-items:center;
+  grid-template-columns:1fr minmax(240px,420px) 1fr}
+.hero__bouteille{grid-column:2;justify-self:center;position:relative}
+.hero__bouteille .bouteille{filter:drop-shadow(0 30px 50px rgba(67,23,42,.13))}
+.hero__gauche{grid-column:1;text-align:right}
+.hero__droite{grid-column:3}
+.hero h1{
+  font-size:clamp(40px,7.2vw,104px);line-height:.92;letter-spacing:-.045em;
+  font-weight:600;
+}
+.hero h1 .mot{display:block}
+.hero h1 .mot--rose{color:var(--rose-500);font-style:italic;
+  font-family:var(--serif);font-weight:400;letter-spacing:-.02em}
+.hero__chapo{font-size:clamp(16px,1.55vw,20px);color:var(--gris-700);
+  max-width:34ch;margin-top:22px}
+.hero__droite .hero__chapo{margin-left:0}
+.hero__gauche .hero__chapo{margin-left:auto}
+.eyebrow{font-size:12px;letter-spacing:.30em;text-transform:uppercase;
+  color:var(--rose-600);font-weight:600;margin:0 0 18px}
+.hero__ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.hero__gauche .hero__ctas{justify-content:flex-end}
+
+@media (max-width:900px){
+  .hero__in{grid-template-columns:1fr}
+  .hero__gauche,.hero__droite,.hero__bouteille{grid-column:1;text-align:left}
+  .hero__gauche .hero__chapo{margin-left:0}
+  .hero__gauche .hero__ctas{justify-content:flex-start}
+  .hero__bouteille{order:-1}
+  /* Sur telephone, la bouteille a 470 px de haut occupait tout le premier
+     ecran : on arrivait sur une image, le titre et les deux boutons etaient
+     sous la ligne de flottaison. Un visuel plein ecran n'est un bon accueil
+     que s'il porte le message ; ici c'est le titre qui le porte. */
+  .hero__bouteille .bouteille{max-height:40vh;width:auto;height:auto}
+}
+
+/* ── Boutons ───────────────────────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;text-decoration:none;
+  font-size:14px;letter-spacing:.055em;font-weight:600;
+  padding:14px 26px;border-radius:999px;border:1px solid transparent;
+  cursor:pointer;font-family:inherit;transition:transform .16s,
+    background .18s,color .18s,border-color .18s,box-shadow .18s;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn--plein{background:var(--rose-600);color:#fff;
+  box-shadow:0 10px 24px rgba(203,95,135,.28)}
+.btn--plein:hover{background:var(--rose-700)}
+.btn--ligne{border-color:var(--rose-300);color:var(--rose-700);background:#fff}
+.btn--ligne:hover{border-color:var(--rose-500);background:var(--rose-50)}
+.btn--clair{background:#fff;color:var(--rose-700)}
+
+/* ── Titres de section ─────────────────────────────────────────────────── */
+.tete{max-width:56ch;margin-bottom:clamp(28px,4vw,56px)}
+.tete h2{font-size:clamp(28px,4.4vw,58px);letter-spacing:-.035em}
+.tete p{margin-top:16px;color:var(--gris-700);font-size:clamp(15px,1.4vw,19px)}
+.tete--centre{margin-left:auto;margin-right:auto;text-align:center}
+
+/* ── Stations de l'accueil ─────────────────────────────────────────────── */
+.stations{border-top:var(--ligne)}
+.station{
+  display:grid;grid-template-columns:88px 1fr minmax(0,42ch) 150px;
+  gap:clamp(16px,3vw,40px);align-items:center;
+  padding:clamp(22px,3.2vw,40px) 0;border-bottom:var(--ligne);
+  text-decoration:none;transition:background .2s;
+}
+.station:hover{background:var(--rose-50)}
+.station__num{font-family:var(--serif);font-size:22px;color:var(--rose-400)}
+.station h3{font-size:clamp(22px,3.2vw,42px);letter-spacing:-.03em}
+.station p{margin:0;color:var(--gris-700);font-size:15px}
+.station__fleche{justify-self:end;font-size:13px;letter-spacing:.09em;
+  color:var(--rose-600);font-weight:600;white-space:nowrap}
+@media (max-width:900px){
+  .station{grid-template-columns:56px 1fr;row-gap:8px}
+  .station p{grid-column:2}
+  .station__fleche{grid-column:2;justify-self:start}
+}
+
+/* ── Grilles produit ───────────────────────────────────────────────────── */
+.grille{display:grid;gap:clamp(14px,2vw,26px)}
+.grille--2{grid-template-columns:repeat(2,1fr)}
+.grille--3{grid-template-columns:repeat(3,1fr)}
+.grille--4{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1000px){.grille--4{grid-template-columns:repeat(2,1fr)}
+  .grille--3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:640px){.grille--2,.grille--3,.grille--4{
+  grid-template-columns:1fr}}
+
+.carte{
+  background:var(--blanc);border:var(--ligne);border-radius:20px;
+  text-decoration:none;
+  padding:26px 24px 30px;display:flex;flex-direction:column;
+  transition:box-shadow .22s,transform .22s,border-color .22s;
+}
+.carte:hover{box-shadow:0 18px 44px rgba(67,23,42,.09);
+  transform:translateY(-3px);border-color:var(--rose-300)}
+.carte__visuel{
+  display:flex;align-items:flex-end;justify-content:center;
+  border-radius:16px;padding:22px 0 14px;margin:-6px -6px 20px;
+  background:linear-gradient(180deg,var(--tint,var(--rose-100)) 0%,#fff 82%);
+  min-height:200px;
+}
+.carte h3{font-size:22px;letter-spacing:-.02em}
+.carte__type{font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--rose-600);font-weight:600;margin:0 0 8px}
+.carte p{color:var(--gris-700);font-size:15px}
+.carte__pied{margin-top:auto;padding-top:18px}
+
+.puces{display:flex;flex-wrap:wrap;gap:7px;list-style:none;padding:0;margin:0}
+.puces li{font-size:12px;letter-spacing:.07em;padding:5px 11px;
+  border:var(--ligne);border-radius:999px;color:var(--gris-700)}
+
+/* ── Fiches techniques et champs vides ─────────────────────────────────── */
+.fiche{width:100%;border-collapse:collapse;margin-top:8px}
+.fiche th,.fiche td{
+  text-align:left;padding:13px 4px;border-bottom:var(--ligne);
+  font-size:15px;vertical-align:top;
+}
+.fiche th{font-weight:500;color:var(--gris-700);width:46%}
+.fiche td{font-weight:600}
+.vide{
+  display:inline-flex;align-items:center;gap:7px;font-weight:500;
+  font-size:13px;letter-spacing:.05em;color:var(--rose-600);
+  background:var(--rose-50);border:1px dashed var(--rose-300);
+  border-radius:999px;padding:4px 12px;
+}
+.vide::before{content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--rose-400);flex:none}
+.avertissement{
+  border-left:3px solid var(--rose-500);background:var(--rose-50);
+  padding:20px 24px;border-radius:0 14px 14px 0;color:var(--gris-700);
+  font-size:15px;max-width:78ch;
+}
+.avertissement strong{color:var(--rose-700)}
+
+/* ── Saveurs ───────────────────────────────────────────────────────────── */
+.saveurs{display:grid;grid-template-columns:repeat(4,1fr);
+  gap:clamp(10px,1.6vw,20px)}
+@media (max-width:1000px){.saveurs{grid-template-columns:repeat(2,1fr)}}
+.saveur{
+  border:var(--ligne);border-radius:20px;background:#fff;overflow:hidden;
+  text-align:center;padding:0 0 22px;cursor:pointer;font:inherit;
+  color:inherit;transition:box-shadow .22s,transform .22s,border-color .22s;
+  display:block;width:100%;text-decoration:none;
+}
+.saveur:hover{transform:translateY(-4px);border-color:var(--tint);
+  box-shadow:0 18px 40px rgba(67,23,42,.10)}
+.saveur h3,.saveur .saveur__fr{text-decoration:none}
+/* display:block N'EST PAS DECORATIF ICI. C'est un <span>, donc en ligne par
+   defaut : la boite du degrade se refermait sur la bouteille au lieu de
+   couvrir la carte, et la teinte apparaissait comme un rectangle pale colle
+   au pied du flacon. Le rendu avait l'air d'un defaut de dessin ; c'etait un
+   defaut de mise en page, et seule la mesure des pixels l'a montre. */
+.saveur__visuel{display:block;padding:26px 0 8px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--tint) 26%,#fff) 0%,#fff 88%)}
+.saveur h3{font-size:19px;margin-bottom:3px}
+.saveur__fr{font-size:13px;color:var(--gris-400)}
+.saveur__ligne{display:block;width:34px;height:3px;border-radius:2px;
+  background:var(--tint);margin:12px auto 0}
+
+/* La fiche saveur ouverte. <details> : elle s'ouvre sans script, et le
+   contenu est dans le HTML meme fermee — donc indexable. */
+.detail{border:var(--ligne);border-radius:20px;background:#fff;
+  margin-top:14px;overflow:hidden}
+.detail>summary{
+  list-style:none;cursor:pointer;padding:20px 24px;display:flex;
+  align-items:center;gap:14px;font-weight:600;
+}
+.detail>summary::-webkit-details-marker{display:none}
+.detail>summary::after{content:"+";margin-left:auto;color:var(--rose-600);
+  font-size:22px;line-height:1}
+.detail[open]>summary::after{content:"\\2212"}
+.detail>summary:hover{background:var(--rose-50)}
+.detail__pastille{width:14px;height:14px;border-radius:50%;
+  background:var(--tint);flex:none}
+.detail__corps{padding:4px 24px 26px;display:grid;
+  grid-template-columns:minmax(0,240px) 1fr;gap:clamp(18px,3vw,44px)}
+@media (max-width:760px){.detail__corps{grid-template-columns:1fr}}
+
+/* ── Le visualiseur 360 ────────────────────────────────────────────────── */
+.viseur{
+  background:radial-gradient(70% 60% at 50% 34%,var(--rose-100),#fff 74%);
+  border:var(--ligne);border-radius:26px;padding:26px;text-align:center;
+}
+.viseur .bouteille{cursor:grab;touch-action:pan-y;user-select:none}
+.viseur .bouteille.tourne{cursor:grabbing}
+.viseur__cmd{display:flex;align-items:center;gap:14px;justify-content:center;
+  margin-top:18px;flex-wrap:wrap}
+.viseur__cmd label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gris-700)}
+.viseur input[type=range]{width:min(340px,70vw);accent-color:var(--rose-500)}
+.viseur__lecture{font-family:var(--serif);font-size:19px;
+  color:var(--rose-600);min-width:4ch;display:inline-block}
+.viseur__aide{font-size:13px;color:var(--gris-400);margin-top:10px}
+
+/* ── Formulaire B2B ────────────────────────────────────────────────────── */
+.form{display:grid;grid-template-columns:repeat(2,1fr);
+  gap:16px clamp(14px,2vw,24px)}
+@media (max-width:720px){.form{grid-template-columns:1fr}}
+.champ{display:flex;flex-direction:column;gap:7px}
+.champ--large{grid-column:1/-1}
+.champ label{font-size:13px;letter-spacing:.05em;color:var(--gris-700);
+  font-weight:500}
+.champ .req{color:var(--rose-500)}
+.champ input,.champ select,.champ textarea{
+  font:inherit;font-size:15px;padding:13px 15px;border:var(--ligne);
+  border-radius:12px;background:#fff;color:var(--encre);width:100%;
+}
+.champ input:focus,.champ select:focus,.champ textarea:focus{
+  outline:2px solid var(--rose-400);outline-offset:1px;border-color:transparent}
+.champ textarea{min-height:120px;resize:vertical}
+.champ__err{font-size:13px;color:var(--rose-600);min-height:0}
+.champ.faux input,.champ.faux select,.champ.faux textarea{
+  border-color:var(--rose-500);background:var(--rose-50)}
+.cases{display:flex;flex-wrap:wrap;gap:9px}
+.cases label{display:inline-flex;align-items:center;gap:8px;
+  border:var(--ligne);border-radius:999px;padding:8px 14px;font-size:14px;
+  cursor:pointer;background:#fff}
+.cases input{accent-color:var(--rose-500)}
+.cases label:has(input:checked){border-color:var(--rose-500);
+  background:var(--rose-50);color:var(--rose-700)}
+
+/* ── Distribution ──────────────────────────────────────────────────────── */
+.legende{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:26px}
+.legende span{display:inline-flex;align-items:center;gap:9px;font-size:14px;
+  color:var(--gris-700)}
+.legende i{width:11px;height:11px;border-radius:50%;display:inline-block}
+.region{border-top:var(--ligne);padding:22px 0}
+.region h3{font-size:19px;margin-bottom:12px}
+.marches{display:flex;flex-wrap:wrap;gap:9px;list-style:none;padding:0;margin:0}
+.marche{display:inline-flex;align-items:center;gap:9px;border:var(--ligne);
+  border-radius:999px;padding:8px 15px;font-size:14px}
+.marche i{width:9px;height:9px;border-radius:50%;flex:none}
+.vide-bloc{
+  border:1px dashed var(--rose-300);border-radius:20px;
+  padding:clamp(28px,5vw,56px);text-align:center;background:var(--rose-50);
+}
+.vide-bloc h3{font-size:22px;margin-bottom:12px;color:var(--rose-700)}
+.vide-bloc p{color:var(--gris-700);max-width:62ch;margin-inline:auto}
+.vide-bloc code{background:#fff;border:var(--ligne);border-radius:7px;
+  padding:2px 7px;font-size:13px}
+
+/* ── Charte graphique ──────────────────────────────────────────────────── */
+.nuancier{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media (max-width:900px){.nuancier{grid-template-columns:repeat(2,1fr)}}
+.nuance{border:var(--ligne);border-radius:16px;overflow:hidden;background:#fff}
+.nuance__aplat{height:96px}
+.nuance__txt{padding:12px 14px 16px}
+.nuance b{display:block;font-size:14px}
+.nuance code{font-size:12px;color:var(--gris-400);letter-spacing:.06em}
+.nuance small{display:block;margin-top:6px;font-size:12px;color:var(--gris-700)}
+
+/* ── Pied de page ──────────────────────────────────────────────────────── */
+.pied{background:var(--rose-900);color:var(--rose-200);
+  padding:clamp(46px,7vw,88px) 0 34px;margin-top:0}
+.pied a{color:var(--rose-200);text-decoration:none}
+.pied a:hover{color:#fff;text-decoration:underline}
+.pied__grille{display:grid;grid-template-columns:1.4fr repeat(3,1fr);
+  gap:clamp(20px,3vw,48px)}
+@media (max-width:900px){.pied__grille{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.pied__grille{grid-template-columns:1fr}}
+.pied h4{font-size:12px;letter-spacing:.20em;text-transform:uppercase;
+  color:var(--rose-400);margin-bottom:14px}
+.pied ul{list-style:none;padding:0;margin:0;display:grid;gap:9px;font-size:15px}
+.pied__signature{font-family:var(--serif);font-style:italic;font-size:26px;
+  color:#fff;margin:0 0 14px}
+.pied__bas{border-top:1px solid rgba(255,255,255,.14);margin-top:44px;
+  padding-top:22px;display:flex;gap:16px;flex-wrap:wrap;font-size:13px;
+  color:var(--rose-300)}
+
+/* ── Apparition au defilement. Sous .js uniquement. ────────────────────── */
+body.js .rev{opacity:0;transform:translateY(18px);
+  transition:opacity .7s cubic-bezier(.22,.8,.28,1),
+             transform .7s cubic-bezier(.22,.8,.28,1)}
+body.js .rev.vu{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  body.js .rev{opacity:1;transform:none;transition:none}
+  .btn:hover,.carte:hover,.saveur:hover{transform:none}
+}
+
+/* ── Bilingue. La langue inactive n'est pas affichee ; elle reste dans le
+   DOM en attribut, donc rien n'est reconstruit au changement. ─────────── */
+[data-fr][data-en]{}
+
+/* ── Accessibilite ─────────────────────────────────────────────────────── */
+.saut{position:absolute;left:-9999px;top:0;background:var(--rose-600);
+  color:#fff;padding:12px 18px;border-radius:0 0 10px 0;z-index:99}
+.saut:focus{left:0}
+:focus-visible{outline:2px solid var(--rose-500);outline-offset:2px}
+.hors-ecran{position:absolute;width:1px;height:1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap}
+"""
